@@ -1,0 +1,3 @@
+By default structs are public and classes are private.
+
+The namespace changes from class to struct and the sintax remain the same.
