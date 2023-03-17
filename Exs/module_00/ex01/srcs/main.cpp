@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:46:18 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/17 10:29:44 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/03/17 11:05:22 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 	std::string	command;
 	int			choice;
 
-	while (1 && !std::cin.eof())
+	while (1)
 	{
 		std::cout << "\n\t\t\t   MAIN MENU                           " << std::endl;
 		std::cout << "\t=============================================" << std::endl;
@@ -29,6 +29,8 @@ int main()
 		std::cout << "\t=============================================" << std::endl;
 		std::cout << '\t';
 		std::getline(std::cin, command);
+		if (std::cin.eof())
+			return 0;
 		if (command == "ADD")
 			choice = 1;
 		else if (command == "SEARCH")
@@ -49,7 +51,7 @@ int main()
 				return (0);
 				break;
 			default:
-				std::cout << "\nInvalid choice, try again! \n" <<std::endl;
+				std::cout << "\tInvalid choice, try again!" <<std::endl;
 		}
 	}
 	return (0);
