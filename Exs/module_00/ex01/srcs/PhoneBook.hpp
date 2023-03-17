@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 16:42:05 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/16 15:07:57 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/15 16:41:54 by jonascim          #+#    #+#             */
+/*   Updated: 2023/03/17 09:58:11 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "PhoneBook.class.hpp"
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-PhoneBook::PhoneBook(void)
-{
-	return ;
-}
+#include "Contact.hpp"
 
-PhoneBook::~PhoneBook(void)
+class PhoneBook
 {
-	return ;
-}
+	public:
 
-char	*PhoneBook::getPhoneBook(void) const
-{
-	return (this->_phoneBook);
-}
+		PhoneBook(void);
+		~PhoneBook(void);
+
+		void	addPhoneBook(void) ;
+		void	searchPhoneBook(void);
+		void	print(Contact contact) const;
+
+	private:
+
+		Contact	_phoneBook[8];
+		int		_index;
+};
+
+#endif

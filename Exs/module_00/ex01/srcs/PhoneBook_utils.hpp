@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   PhoneBook_utils.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 16:41:54 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/16 15:07:59 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/17 07:34:09 by jonascim          #+#    #+#             */
+/*   Updated: 2023/03/17 09:58:33 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#ifndef PHONEBOOK_UTILS_H
+# define PHONEBOOK_UTILS_H
 
+#include "Contact.hpp"
 #include <iostream>
-#include "Contact.class.hpp"
 
-class PhoneBook
-{
-	public:
-
-		PhoneBook(void);
-		~PhoneBook(void);
-
-		void	addPhoneBook(void) ;
-		void	searchPhoneBook(void) const;
-		void	print(Contact contact) const;
-
-		Contact	get_contact(int index) const;
-
-	private:
-
-		Contact	_phoneBook[8];
-		int		_index;
-};
+std::string add_spaces(unsigned int num);
+std::string	fix_len(std::string str, unsigned int limit);
+int			search_table(Contact phoneBook[8]);
 
 #endif
