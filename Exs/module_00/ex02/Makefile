@@ -1,4 +1,4 @@
-NAME = oldPhoneBook
+NAME = jobtask
 
 GCC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
