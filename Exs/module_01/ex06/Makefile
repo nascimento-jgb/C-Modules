@@ -1,4 +1,4 @@
-NAME = annoyance
+NAME = harlFilter
 
 GCC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
