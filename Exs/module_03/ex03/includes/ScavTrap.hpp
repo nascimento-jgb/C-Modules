@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 08:12:40 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/27 15:34:17 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:35:56 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const &src);
-
+		ScavTrap &operator=(ScavTrap const &cpy);
 		~ScavTrap(void);
 
-		ScavTrap &operator=(ScavTrap const &cpy);
-
 		void	attack(const std::string &target);
-		void			guardGate(void);
+		void	guardGate(void);
 };
 
 #endif
