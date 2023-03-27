@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:32:01 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/24 14:09:07 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/03/24 15:25:30 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static Fixed abs(Fixed point)
 {
-	if ( point < 0)
+	if (point < 0)
 		return point * -1;
 	return point;
 }
@@ -23,7 +23,7 @@ static Fixed	area(Point const a, Point const b, Point const c)
 {
 	Fixed area;
 
-	area = ((a.getX()*(b.getY() - c.getY()) + b.getX()*(c.getY() - a.getY()) + c.getX()*(a.getY() - b.getY()))/2);
+	area = ((a.getX()*(b.getY() - c.getY())) + (b.getX()*(c.getY() - a.getY())) + (c.getX()*(a.getY() - b.getY())))/2;
 	return (area);
 }
 
