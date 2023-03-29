@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Integer.class.hpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 13:02:55 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/24 07:46:42 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/24 08:25:02 by jonascim          #+#    #+#             */
+/*   Updated: 2023/03/24 08:30:08 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERGER_CLASS_H
-# define INTEGER_CLAS_H
+#include "Sample.class.hpp"
+#include <iostream>
 
-# include <iostream>
-
-class Integer
+int main()
 {
-	public:
+	Sample	instance1;
+	Sample	instance2(42);
+	Sample	instance3(instance1);
 
-		Integer(int const n);
-		~Integer(void);
+	std::cout << instance1 << std::endl;
+	std::cout << instance2 << std::endl;
+	std::cout << instance3 << std::endl;
 
-		int	getValue(void) const;
+	instance3 = instance2;
+	std::cout << instance3 << std::endl;
 
-		Integer	&	operator=(Integer const &rhs);
-		Integer		operator+(Integer const &rhs) const;
-
-	private:
-
-		int	_n;
-
-};
-
-std::ostream &operator << (std::ostream &output, Integer const &rhs);
-
-#endif
+	return (0);
+}

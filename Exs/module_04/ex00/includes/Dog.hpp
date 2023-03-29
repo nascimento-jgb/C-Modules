@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Integer.class.hpp                                  :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 13:02:55 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/24 07:46:42 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/29 10:36:40 by jonascim          #+#    #+#             */
+/*   Updated: 2023/03/29 10:46:41 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERGER_CLASS_H
-# define INTEGER_CLAS_H
+#ifndef DOG_H
+# define DOG_H
 
-# include <iostream>
+#include <iostream>
+#include "Animal.hpp"
 
-class Integer
+class Dog : public Animal
 {
 	public:
+		//canonical form
+		Dog(void);
+		Dog(std::string type);
+		Dog(const Dog &cpy);
+		~Dog(void);
 
-		Integer(int const n);
-		~Integer(void);
+		//Operator overload
+		Dog		&operator=(const Dog &src);
 
-		int	getValue(void) const;
+		//Getter and Setter
+		void		setType(std::string type);
+		std::string	getType(void) const;
 
-		Integer	&	operator=(Integer const &rhs);
-		Integer		operator+(Integer const &rhs) const;
-
-	private:
-
-		int	_n;
-
+		//Method
+		void		makeSound(void) const;
 };
-
-std::ostream &operator << (std::ostream &output, Integer const &rhs);
 
 #endif
