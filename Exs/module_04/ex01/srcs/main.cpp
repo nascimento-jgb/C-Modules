@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:54:39 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 13:45:30 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:13:37 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 
 	delete dog;
 	delete cat;
-	// system("leaks ex01");
+	system("leaks animals");
 	std::cout << std::endl;
 
 	return (0);
