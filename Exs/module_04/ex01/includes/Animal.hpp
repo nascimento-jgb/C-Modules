@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:52:51 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 10:50:45 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:02:00 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ class Animal
 		virtual ~Animal(void);
 
 		//Operator overload
-		Animal		&operator=(const Animal &src);
+		Animal			&operator=(const Animal &src);
 
 		//Getter and Setter
-		void		setType(std::string type);
-		std::string	getType(void) const;
+		void			setType(std::string type);
+		std::string		getType(void) const;
 
 		//Method
-		virtual void		makeSound(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif

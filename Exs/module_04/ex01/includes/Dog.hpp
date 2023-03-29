@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:36:40 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 13:33:59 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:01:41 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Dog : public Animal, public Brain
 		//Getter and Setter
 		void		setType(std::string type);
 		std::string	getType(void) const;
-		Brain	*getBrain(void) const;
+		Brain		*getBrain(void) const;
 
 		//Method
 		void		makeSound(void) const;
