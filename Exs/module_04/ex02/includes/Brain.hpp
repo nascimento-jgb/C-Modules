@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 09:52:51 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 14:41:37 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/29 11:22:37 by jonascim          #+#    #+#             */
+/*   Updated: 2023/03/29 14:50:05 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef BRAIN_H
+# define BRAIN_H
 
 #include <iostream>
 
-class Animal
+class Brain
 {
 	protected:
 
-		std::string _type;
+		std::string *ideas;
 
 	public:
-		//canonical form
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &cpy);
-		virtual ~Animal(void);
 
-		//Operator overload
-		Animal			&operator=(const Animal &src);
+		Brain(void);
+		Brain(Brain &cpy);
+		virtual ~Brain(void);
 
-		//Getter and Setter
-		void			setType(std::string type);
-		std::string		getType(void) const;
+		Brain &operator=(const Brain &src);
 
-		//Method
-		virtual void	makeSound(void) const;
+		std::string	*getIdeas(void);
 };
 
 #endif

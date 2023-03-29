@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 09:52:51 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 14:41:37 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/29 10:36:40 by jonascim          #+#    #+#             */
+/*   Updated: 2023/03/29 14:46:35 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef DOG_H
+# define DOG_H
 
 #include <iostream>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Animal
+class Dog : public AAnimal, public Brain
 {
-	protected:
+	private:
 
-		std::string _type;
+		Brain	*brain;
 
 	public:
 		//canonical form
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &cpy);
-		virtual ~Animal(void);
+		Dog(void);
+		Dog(std::string type);
+		Dog(const Dog &cpy);
+		~Dog(void);
 
 		//Operator overload
-		Animal			&operator=(const Animal &src);
+		Dog		&operator=(const Dog &src);
 
 		//Getter and Setter
-		void			setType(std::string type);
-		std::string		getType(void) const;
+		void		setType(std::string type);
+		std::string	getType(void) const;
+		Brain		*getBrain(void) const;
 
 		//Method
-		virtual void	makeSound(void) const;
+		void		makeSound(void) const;
 };
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:52:51 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 14:41:37 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:41:18 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-class Animal
+class AAnimal
 {
 	protected:
 
@@ -23,17 +23,17 @@ class Animal
 
 	public:
 		//canonical form
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &cpy);
-		virtual ~Animal(void);
+		AAnimal(void);
+		AAnimal(std::string type);
+		AAnimal(const AAnimal &cpy);
+		virtual ~AAnimal(void) = 0;
 
 		//Operator overload
-		Animal			&operator=(const Animal &src);
+		AAnimal			&operator=(const AAnimal &src);
 
 		//Getter and Setter
 		void			setType(std::string type);
-		std::string		getType(void) const;
+		virtual std::string		getType(void) const;
 
 		//Method
 		virtual void	makeSound(void) const;

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 09:52:51 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 14:41:37 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/29 10:51:44 by jonascim          #+#    #+#             */
+/*   Updated: 2023/03/29 11:02:13 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
 #include <iostream>
 
-class Animal
+class WrongAnimal
 {
 	protected:
 
@@ -23,20 +23,20 @@ class Animal
 
 	public:
 		//canonical form
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &cpy);
-		virtual ~Animal(void);
+		WrongAnimal(void);
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal &cpy);
+		virtual ~WrongAnimal(void);
 
 		//Operator overload
-		Animal			&operator=(const Animal &src);
+		WrongAnimal		&operator=(const WrongAnimal &src);
 
 		//Getter and Setter
-		void			setType(std::string type);
-		std::string		getType(void) const;
+		void		setType(std::string type);
+		std::string	getType(void) const;
 
 		//Method
-		virtual void	makeSound(void) const;
+		virtual void		makeSound(void) const;
 };
 
 #endif
