@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 08:39:14 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/22 11:24:19 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/04/26 07:43:04 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Weapon
 		Weapon(std::string weapon_type);
 		~Weapon(void);
 
-		std::string	getType(void);
+		const std::string	&getType(void);
 		void		setType(std::string type);
 
 	private:

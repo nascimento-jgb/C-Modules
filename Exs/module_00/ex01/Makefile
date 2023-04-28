@@ -1,6 +1,6 @@
 NAME = oldPhoneBook
 
-GCC = g++
+GCC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 RM = rm

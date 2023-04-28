@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 07:38:07 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/17 11:06:33 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/04/26 09:46:15 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ int	search_table(Contact phoneBook[8])
 	c = '0';
 	while (++c <= '8')
 	{
-		if (phoneBook[c - 1 -'0'].getName().size())
+		if (phoneBook[c - 1 - '0'].getName().size())
 		{
 			aux = c;
 			aux = fix_len(aux, 10);
 			std::cout << "\t|" << std::setfill(' ') << std::setw(10) << aux;
-			aux = fix_len(phoneBook[c -1 -'0'].getName(), 10);
+			aux = fix_len(phoneBook[c - 1 - '0'].getName(), 10);
 			std::cout << "|" << std::setfill(' ') << std::setw(10) << aux;
-			aux = fix_len(phoneBook[c -1 -'0'].getLastName(), 10);
+			aux = fix_len(phoneBook[c - 1 - '0'].getLastName(), 10);
 			std::cout << "|" << std::setfill(' ') << std::setw(10) << aux;
-			aux = fix_len(phoneBook[c -1 -'0'].getNickname(), 10);
+			aux = fix_len(phoneBook[c - 1 - '0'].getNickname(), 10);
 			std::cout << "|" << std::setfill(' ') << std::setw(10) << aux;
 			std::cout << "|" << std::endl;
 			++counter;
 		}
 	}
-	std::cout << "\t|-------------------------------------------|"<< std::endl;
+	std::cout << "\t|-------------------------------------------|" << std::endl;
 	return (counter);
 }

@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:42:05 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/17 15:10:21 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/04/26 09:41:32 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ void	PhoneBook::searchPhoneBook(void)
 		if (std::getline(std::cin, aux) && aux != "" && aux.size() == 1 && aux[0] >= 1
 					&& aux[0] <= 8 && this->_phoneBook[aux[0] - 1 - '0'].getName().size())
 			break ;
+		else
+			{
+				std::cout << "Invalid index input." << std::endl;
+				exit(1);
+			}
 	}
 	if (!std::cin.eof())
 		this->print(this->_phoneBook[aux[0] - 1 - '0']);

@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 11:25:08 by jonascim          #+#    #+#             */
-/*   Updated: 2023/04/10 12:03:43 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/04/26 09:46:43 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	Account::_displayTimestamp();
 	if (withdrawal > this->_amount)
 	{
-		std::cout << "index:" << this->_accountIndex << ";p_ammount:" << this->_amount \
+		std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount \
 		<< ";withdrawal:refused" << std::endl;
 		return false;
 	}
@@ -94,7 +94,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	{
 		this->_nbWithdrawals++;
 		Account::_totalNbWithdrawals++;
-		std::cout << "index:" << this->_accountIndex << ";p_ammount:" << this->_amount \
+		std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount \
 			<< ";withdrawal:" <<  withdrawal << ";amount:" << this->_amount - withdrawal << ";nb_withdrawals:" \
 				<< this->_nbWithdrawals << std::endl;
 		this->_amount -= withdrawal;

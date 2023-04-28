@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:46:18 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/17 11:06:38 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/04/26 08:35:53 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
 		std::cout << "\t   Type SEARCH to find info about contacts   " << std::endl;
 		std::cout << "\t   Type EXIT to finalize the program         " << std::endl;
 		std::cout << "\t=============================================" << std::endl;
-		std::cout << '\t';
+		std::cout << "\t" << std::endl;
 		std::getline(std::cin, command);
 		if (std::cin.eof())
 			return 0;
@@ -51,7 +51,7 @@ int main()
 				return (0);
 				break;
 			default:
-				std::cout << "\tInvalid choice, try again!" <<std::endl;
+				std::cout << "\tInvalid choice, try again!" << std::endl;
 		}
 	}
 	return (0);

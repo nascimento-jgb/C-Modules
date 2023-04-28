@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:17:24 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/27 12:39:36 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/04/22 09:05:55 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ FragTrap &FragTrap::operator=(FragTrap const &cpy)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap destructor being called." << std::endl;
+	std::cout << "Destructor FragTrap being called." << std::endl;
 	return ;
 }
 
@@ -60,7 +60,7 @@ void	FragTrap::highFiveGuys(void)
 		std::cout << "Hey, it's time to give a high five! " << std::endl;
 		std::cout << "So please, type it down: " << std::endl;
 		std::cout << "[High Five] " << std::endl;
-		std::cin >> input;	
+		std::cin >> input;
 	}
 	return ;
 }

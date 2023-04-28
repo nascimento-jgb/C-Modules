@@ -1,6 +1,6 @@
 NAME = brainhunters
 
-GCC = g++
+GCC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm
