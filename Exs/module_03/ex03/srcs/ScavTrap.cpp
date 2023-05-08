@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 08:14:42 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/27 11:01:03 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:03:17 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,23 @@
 // Canonical form
 ScavTrap::ScavTrap(void)
 {
-	std::cout << "Constructor ScavTrap called initialized." << std::endl;
+	std::cout << "ScavTrap constructor called initialized." << std::endl;
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name, int energy) : ClapTrap(name)
 {
-	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
-	std::cout << "Constructor ScavTrap called and variables initialized." << std::endl;
+	_energyPoints = energy;
+	std::cout << "ScavTrap special constructor called and variables initialized." << std::endl;
+	return ;
+}
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+{
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
+	std::cout << "ScavTrap constructor called and variables initialized." << std::endl;
 	return ;
 }
 

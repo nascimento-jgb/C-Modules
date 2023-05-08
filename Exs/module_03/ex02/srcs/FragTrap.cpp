@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:17:24 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/27 12:39:36 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/08 09:34:38 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,7 @@ FragTrap::~FragTrap(void)
 
 void	FragTrap::highFiveGuys(void)
 {
-	std::string input;
-
-	while (input.compare("High Five"))
-	{
-		std::cout << "Hey, it's time to give a high five! " << std::endl;
-		std::cout << "So please, type it down: " << std::endl;
-		std::cout << "[High Five] " << std::endl;
-		std::cin >> input;	
-	}
+	std::cout << "Hey, it's time to give a high five! " << std::endl;
+	std::cout << "High Five to your buddy " << this->_name << ", anyone? No? " << std::endl;
 	return ;
 }

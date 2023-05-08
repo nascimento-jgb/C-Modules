@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:17:24 by jonascim          #+#    #+#             */
-/*   Updated: 2023/04/22 09:05:55 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:03:18 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,19 @@ FragTrap::FragTrap(void)
 	return ;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name, int hp, int attack) : ClapTrap(name)
 {
-	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	_hitPoints = hp;
+	_attackDamage = attack;
+	std::cout << "FragTrap special constructor called and variables initialized." << std::endl;
+	return ;
+}
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
+{
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	std::cout << "FragTrap constructor called and variables initialized." << std::endl;
 	return ;
 }
@@ -53,14 +60,7 @@ FragTrap::~FragTrap(void)
 
 void	FragTrap::highFiveGuys(void)
 {
-	std::string input;
-
-	while (input.compare("High Five"))
-	{
-		std::cout << "Hey, it's time to give a high five! " << std::endl;
-		std::cout << "So please, type it down: " << std::endl;
-		std::cout << "[High Five] " << std::endl;
-		std::cin >> input;
-	}
+	std::cout << "Hey, it's time to give a high five! " << std::endl;
+	std::cout << "High Five to your buddy " << this->_name << ", anyone? No? " << std::endl;
 	return ;
 }

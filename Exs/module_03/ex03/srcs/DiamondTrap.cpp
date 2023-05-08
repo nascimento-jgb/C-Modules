@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:23:21 by jonascim          #+#    #+#             */
-/*   Updated: 2023/04/22 08:53:19 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:03:13 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,17 @@ DiamondTrap::DiamondTrap(void)
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_trap"), FragTrap(name, 100, 30), ScavTrap(name, 50)
 {
-	ClapTrap(name + "_clap_trap");
-	this->_name = name;
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	_name = name;
 	std::cout << "DiamondTrap constructor called and variables initialized." << std::endl;
 	return ;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &src)
+DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(src._name + "_clap_trap"), FragTrap(src._name), ScavTrap(src._name)
 {
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
-	*this = src;
+	this->_name = src._name;
 	return ;
 }
 
