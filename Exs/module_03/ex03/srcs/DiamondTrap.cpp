@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:23:21 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/08 10:03:13 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:25:10 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(src._name + "_clap_t
 {
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 	this->_name = src._name;
+	this->_attackDamage = src.getAttackDamage();
+	this->_hitPoints = src.getHitPoints();
+	this->_energyPoints = src.getEnergyPoints();
 	return ;
 }
 
@@ -62,6 +65,6 @@ void	DiamondTrap::attack(const std::string &target)
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "I am the DiamondTrap name" << this->_name << " created based on " \
+	std::cout << "I am the DiamondTrap name " << this->_name << " created based on " \
 		<< ClapTrap::_name << " ClapTrap name." << std::endl;
 }
