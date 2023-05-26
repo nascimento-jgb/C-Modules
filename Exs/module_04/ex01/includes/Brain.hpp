@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:22:37 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 13:21:39 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:33:19 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,20 @@
 
 class Brain
 {
-	protected:
+	private:
 
-		std::string *ideas;
+		std::string ideas[100];
 
 	public:
 
 		Brain(void);
-		Brain(Brain &cpy);
+		Brain(const Brain &cpy);
 		virtual ~Brain(void);
 
 		Brain &operator=(const Brain &src);
 
-		std::string	*getIdeas(void);
+		std::string	getIdea(unsigned int index);
+		void		setIdea(unsigned int index, std::string idea);
 };
 
 #endif

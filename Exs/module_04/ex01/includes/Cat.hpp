@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:16:43 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 13:33:57 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:54:31 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal, public Brain
+class Cat : public Animal
 {
 	private:
 
@@ -36,7 +36,7 @@ class Cat : public Animal, public Brain
 		//Getter and Setter
 		void		setType(std::string type);
 		std::string	getType(void) const;
-		Brain		*getBrain(void) const;
+		Brain		&getBrain(void) const;
 
 		//Method
 		void		makeSound(void) const;

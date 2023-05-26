@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:19:17 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 14:12:59 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:51:05 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Cat::Cat(std::string type)
 Cat::Cat(const Cat &cpy)
 {
 	std::cout << "Cat copy constructor being called" << std::endl;
-	this->brain = new Brain(*(cpy.getBrain()));
+	this->brain = new Brain(*cpy.brain);
 	this->_type = cpy.getType();
 	return ;
 }
@@ -67,9 +67,9 @@ std::string Cat::getType(void) const
 	return (this->_type);
 }
 
-Brain *Cat::getBrain(void) const
+Brain &Cat::getBrain(void) const
 {
-	return (this->brain);
+	return (*brain);
 }
 
 //Method
