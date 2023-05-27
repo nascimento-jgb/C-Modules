@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:51:47 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 11:02:12 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/27 13:28:20 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongCat : public WrongAnimal
 		~WrongCat(void);
 
 		//Operator overload
-		WrongCat		&operator=(const WrongCat &src);
+		WrongCat	&operator=(const WrongCat &src);
 
 		//Getter and Setter
 		void		setType(std::string type);

@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:37:41 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 15:50:24 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/27 13:29:43 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Dog::Dog(std::string type)
 Dog::Dog(const Dog &cpy)
 {
 	std::cout << "Dog copy constructor being called" << std::endl;
-	this->brain = new Brain(*(cpy.getBrain()));
+	this->brain = new Brain(*cpy.brain);
 	this->_type = cpy.getType();
 	return ;
 }
@@ -48,9 +48,11 @@ Dog::~Dog(void)
 //Operator
 Dog	&Dog::operator=(const Dog &src)
 {
-	if (this->brain)
-		delete this->brain;
-	this->brain = new Brain;
+	if(this == &src)
+		return(*this);
+	Brain *newBrain = new Brain(*src.brain);
+	delete brain;
+	this->brain = newBrain;
 	this->_type = src._type;
 	return (*this);
 }
@@ -67,9 +69,9 @@ std::string Dog::getType(void) const
 	return (this->_type);
 }
 
-Brain *Dog::getBrain(void) const
+Brain &Dog::getBrain(void) const
 {
-	return (this->brain);
+	return (*brain);
 }
 
 //Method

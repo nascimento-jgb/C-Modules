@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:19:17 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 14:12:59 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/27 13:28:43 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Cat::Cat(std::string type)
 Cat::Cat(const Cat &cpy)
 {
 	std::cout << "Cat copy constructor being called" << std::endl;
-	this->brain = new Brain(*(cpy.getBrain()));
+	this->brain = new Brain(*cpy.brain);
 	this->_type = cpy.getType();
 	return ;
 }
@@ -48,9 +48,11 @@ Cat::~Cat(void)
 //Operator
 Cat	&Cat::operator=(const Cat &src)
 {
-	if (this->brain)
-		delete this->brain;
-	this->brain =  new Brain;
+	if(this == &src)
+		return(*this);
+	Brain *newBrain = new Brain(*src.brain);
+	delete brain;
+	this->brain = newBrain;
 	this->_type = src._type;
 	return (*this);
 }
@@ -67,9 +69,9 @@ std::string Cat::getType(void) const
 	return (this->_type);
 }
 
-Brain *Cat::getBrain(void) const
+Brain &Cat::getBrain(void) const
 {
-	return (this->brain);
+	return (*brain);
 }
 
 //Method

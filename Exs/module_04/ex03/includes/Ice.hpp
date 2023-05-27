@@ -1,45 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 10:36:40 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/27 15:29:07 by jonascim         ###   ########.fr       */
+/*   Created: 2023/05/27 16:18:52 by jonascim          #+#    #+#             */
+/*   Updated: 2023/05/27 16:19:11 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
+#ifndef ICE_H
+#define ICE_H
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Dog : public Animal
+class Ice : public AMateria
 {
 	private:
 
-		Brain	*brain;
-
 	public:
 		//canonical form
-		Dog(void);
-		Dog(std::string type);
-		Dog(const Dog &cpy);
-		virutal ~Dog(void);
+		Ice(void);
+		Ice(const Ice &src);
+		virtual	~Ice(void);
 
 		//Operator overload
-		Dog		&operator=(const Dog &src);
+		Ice		&operator=(const Ice &src);
 
-		//Getter and Setter
-		void		setType(std::string type);
-		std::string	getType(void) const;
-		Brain		&getBrain(void) const;
-
-		//Method
-		void		makeSound(void) const;
+		//Methods
+		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 };
 
 #endif

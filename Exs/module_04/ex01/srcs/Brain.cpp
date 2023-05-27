@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:22:39 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/26 16:34:42 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/27 13:48:02 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ Brain &Brain::operator=(const Brain &src)
 	std::cout<< "Brain destructor being called" << std::endl;
 	if (this == &src)
 		return (*this);
-	int i = 0;
-	while (src.ideas[i].size() && i < 100)
+	for (int i = 0; src.ideas[i].size() && i < 100; i++)
 	{
 		std::cout << "Idea " << i + 1 << " , copying: " << src.ideas[i] << std::endl;
 		this->ideas[i] = src.ideas[i];

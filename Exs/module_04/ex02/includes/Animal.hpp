@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 10:36:40 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/27 15:29:07 by jonascim         ###   ########.fr       */
+/*   Created: 2023/03/29 09:52:51 by jonascim          #+#    #+#             */
+/*   Updated: 2023/05/27 15:28:30 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
+#ifndef ANIMAL_H
+# define ANIMAL_H
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal
+class Animal
 {
-	private:
+	protected:
 
-		Brain	*brain;
+		std::string _type;
 
 	public:
 		//canonical form
-		Dog(void);
-		Dog(std::string type);
-		Dog(const Dog &cpy);
-		virutal ~Dog(void);
+		Animal(void);
+		Animal(std::string type);
+		Animal(const Animal &cpy);
+		virtual ~Animal(void);
 
 		//Operator overload
-		Dog		&operator=(const Dog &src);
+		Animal			&operator=(const Animal &src);
 
 		//Getter and Setter
-		void		setType(std::string type);
-		std::string	getType(void) const;
-		Brain		&getBrain(void) const;
+		void			setType(std::string type);
+		std::string		getType(void) const;
 
 		//Method
-		void		makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 };
 
 #endif

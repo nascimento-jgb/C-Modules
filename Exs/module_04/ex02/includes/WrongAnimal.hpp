@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:51:44 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/29 11:02:13 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/27 15:27:35 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class WrongAnimal
 		WrongAnimal(void);
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &cpy);
-		virtual ~WrongAnimal(void);
+		~WrongAnimal(void);
 
 		//Operator overload
-		WrongAnimal		&operator=(const WrongAnimal &src);
+		WrongAnimal	&operator=(const WrongAnimal &src);
 
 		//Getter and Setter
 		void		setType(std::string type);
