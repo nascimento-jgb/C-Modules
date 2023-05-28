@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 14:01:52 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/28 14:22:01 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/28 14:31:14 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,5 @@ AMateria	*MateriaSource::createMateria(std::string const &type)
 			return (_materias[i]->clone());
 	}
 	std::cout << "Not possible to create the materia." << std::endl;
-	return ;
+	return (0);
 }

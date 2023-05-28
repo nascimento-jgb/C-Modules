@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 16:38:47 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/28 12:35:40 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/28 14:29:24 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Character : public ICharacter
 
 	//Getter and Setter
 		void				setName(std::string name);
-		std::string const	&getName(void);
+		std::string const	&getName(void) const;
 
 	//Methods
 		void				equip(AMateria *m);

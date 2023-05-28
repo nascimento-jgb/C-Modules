@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 16:35:02 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/28 12:35:41 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/28 14:33:32 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Character::Character(std::string name) : _name(name), _stash(nullptr)
 {
 	for (int i = 0; i < 4; i++)
 		_spells[i] = nullptr;
-	std::cout << "Parameter constructor being called " << std::endl;
+	std::cout << "Character parameter constructor being called " << std::endl;
 	return ;
 }
 
@@ -81,7 +81,7 @@ void	Character::setName(std::string name)
 	return;
 }
 
-std::string const	&Character::getName(void)
+std::string const	&Character::getName(void) const
 {
 	return (this->_name);
 }
