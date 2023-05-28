@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 16:35:02 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/27 18:07:03 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/28 12:35:41 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 
 //Canonical Form
-Character::Character(void)
+Character::Character(void) : _stash(nullptr)
 {
 	for (int i = 0; i < 4; i++)
 		_spells[i] = nullptr;
@@ -22,7 +22,7 @@ Character::Character(void)
 	return ;
 }
 
-Character::Character(std::string name) : _name(name)
+Character::Character(std::string name) : _name(name), _stash(nullptr)
 {
 	for (int i = 0; i < 4; i++)
 		_spells[i] = nullptr;
@@ -32,6 +32,7 @@ Character::Character(std::string name) : _name(name)
 
 Character::Character(const Character &src)
 {
+	this->_stash = src._stash;
 	this->_name = src._name;
 	for (int i = 0; i < 4; i++)
 	{
@@ -53,7 +54,8 @@ Character::~Character(void)
 			_spells[i] = nullptr;
 		}
 	}
-	std::cout << "Character destructor was called " << std::endl;
+	delete _stash;
+	std::cout << "Character destructor was called succesfully" << std::endl;
 	return;
 }
 
@@ -133,7 +135,11 @@ void	Character::addToStash(AMateria *m)
 		_stash = new Stash(m);
 	else
 	{
-		Stash *temp = this->_stash;
-		while ()
+		Stash *temp = _stash;
+		while (temp->getNext() != nullptr)
+		{
+			temp = temp->getNext();
+		}
+		temp->setNext(new Stash(m));
 	}
 }

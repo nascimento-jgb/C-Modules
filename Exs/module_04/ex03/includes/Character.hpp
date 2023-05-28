@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 16:38:47 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/27 17:14:24 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/28 12:35:40 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Character : public ICharacter
 	private:
 		std::string	_name;
 		AMateria	*_spells[4];
-		// Stash		_stash;
+		Stash		*_stash;
 
 	public:
 	//Canonical Form
@@ -33,17 +33,17 @@ class Character : public ICharacter
 		~Character(void);
 
 	//Operator Overload
-		Character &operator=(const Character &src);
+		Character			&operator=(const Character &src);
 
 	//Getter and Setter
 		void				setName(std::string name);
 		std::string const	&getName(void);
 
 	//Methods
-		void equip(AMateria *m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
-
+		void				equip(AMateria *m);
+		void				unequip(int idx);
+		void				use(int idx, ICharacter& target);
+		void				addToStash(AMateria *m);
 };
 
 #endif

@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Stash.hpp                                          :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 16:41:39 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/28 09:51:56 by jonascim         ###   ########.fr       */
+/*   Created: 2023/05/28 13:55:54 by jonascim          #+#    #+#             */
+/*   Updated: 2023/05/28 14:01:48 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STASH_HPP
-#define STASH_HPP
+#ifndef MATERIASOURCE_H
+#define MATERIASOURCE_H
 
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Stash
+class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria	*_data;
-		Stash		*_next;
+		AMateria *_materias[4];
 
 	public:
 		//Canonical Form
-		Stash(void);
-		Stash(AMateria *m);
-		Stash(const Stash &src);
-		~Stash(void);
+		MateriaSource(void);
+		MateriaSource(const MateriaSource &src);
+		~MateriaSource(void);
 
-		//Operator overload
-		Stash	&operator=(const Stash &src);
+		//Operator Overload
+		MateriaSource &operator=(const MateriaSource &src);
 
-		//Getters and Setters
-		Stash		*getNext(void);
-		void		setNext(Stash *append);
-		AMateria	*getMateria(void);
+		//Methods
+		void		learnMateria(AMateria *);
+		AMateria	*createMateria(std::string const &type);
 };
 
 #endif
