@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 14:01:52 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/28 14:31:14 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/30 10:50:16 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ MateriaSource::~MateriaSource(void)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		delete _materias[i];
-		_materias[i] = nullptr;
+		if (_materias[i] != nullptr)
+			delete _materias[i];
 	}
 	std::cout << "MateriaSource destructor being called" << std::endl;
 	return ;
@@ -72,8 +72,11 @@ AMateria	*MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (_materias[i] == nullptr && _materias[i]->getType() == type)
+		if (_materias[i] != nullptr && _materias[i]->getType() == type)
+		{
+			std::cout << "Materia "<< type << " created."<< std::endl;
 			return (_materias[i]->clone());
+		}
 	}
 	std::cout << "Not possible to create the materia." << std::endl;
 	return (0);

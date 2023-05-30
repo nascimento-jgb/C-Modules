@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:55:39 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/27 16:34:51 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/30 11:10:38 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cure::Cure(const Cure &src)
 
 Cure::~Cure(void)
 {
-	std::cout << "Cure desctructor called." << std::endl;
+	std::cout << "Cure destructor called." << std::endl;
 	return ;
 }
 

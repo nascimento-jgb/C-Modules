@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 16:38:47 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/28 14:29:24 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/30 10:55:56 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 #include "Stash.hpp"
-#include <string>
 
 class Character : public ICharacter
 {

@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 09:37:37 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/28 09:51:39 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/30 11:21:38 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,25 @@ Stash::Stash(AMateria *m): _data(m), _next(nullptr)
 
 Stash::Stash(const Stash &src)
 {
-	this->_data = src._data;
-	this->_next = src._next;
+	_data = src._data;
+	_next = src._next;
 	return ;
 }
 
 Stash::~Stash(void)
 {
 	delete _data;
+	_data = nullptr;
 	delete _next;
-	this->_data = nullptr;
-	this->_next = nullptr;
+	_next = nullptr;
+	// Stash *current = this;
+	// while (current != nullptr)
+	// {
+	// 	Stash *next = current->getNext();
+	// 	delete current->_data;
+	// 	delete current;
+	// 	current = next;
+	// }
 }
 
 //Operator Overload
@@ -43,24 +51,24 @@ Stash	&Stash::operator=(const Stash &src)
 {
 	if (this == &src)
 		return (*this);
-	this->_data = src._data;
-	this->_next = src._next;
+	_data = src._data;
+	_next = src._next;
 	return (*this);
 }
 
 //Getters and Setters
 Stash	*Stash::getNext(void)
 {
-	return (this->_next);
+	return (_next);
 }
 
 void	Stash::setNext(Stash *append)
 {
-	this->_next = append;
+	_next = append;
 	return ;
 }
 
 AMateria	*Stash::getMateria(void)
 {
-	return (this->_data);
+	return (_data);
 }
