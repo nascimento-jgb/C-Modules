@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 16:35:02 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/30 11:31:39 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/30 12:35:41 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,14 +145,14 @@ void	Character::addToStash(AMateria *m)
 		{
 			if (temp->getMateria() == m)
 			{
-				std::cout << "Materia already existent" << std::endl;
+				std::cout << "Materia already existent." << std::endl;
 				return ;
 			}
 			temp = temp->getNext();
 		}
 		if (temp->getMateria() == m)
 		{
-			std::cout << "Materia already existent" << std::endl;
+			std::cout << "Materia already existent." << std::endl;
 			return ;
 		}
 		temp->setNext(new Stash(m));
