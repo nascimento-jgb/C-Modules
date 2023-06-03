@@ -28,7 +28,7 @@ class Dog : public Animal
 		Dog(void);
 		Dog(std::string type);
 		Dog(const Dog &cpy);
-		virutal ~Dog(void);
+		virtual ~Dog(void);
 
 		//Operator overload
 		Dog		&operator=(const Dog &src);

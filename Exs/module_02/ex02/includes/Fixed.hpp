@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:53:11 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/24 12:14:41 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/01 11:34:02 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ class Fixed
 		Fixed	operator*(Fixed const &rhs) const;
 		Fixed	operator/(Fixed const &rhs) const;
 
-		Fixed	&operator++(void);
-		Fixed	&operator--(void);
+		Fixed	operator++(void);
+		Fixed	operator--(void);
 		Fixed	operator++(int);
 		Fixed	operator--(int);
 

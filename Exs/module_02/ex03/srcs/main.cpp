@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 09:06:01 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/24 14:18:29 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/01 11:44:36 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main()
 	Point	a(0, 0);
 	Point	b(5, 0);
 	Point	c(5, 9);
-	Point	point(99, 99);
+	Point	point(1, 1.5);
 
 	if (bsp(a, b, c, point) == false)
 		std::cout << "Point out of the triangle" << std::endl;

@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 09:06:53 by jonascim          #+#    #+#             */
-/*   Updated: 2023/05/01 11:34:33 by jonascim         ###   ########.fr       */
+/*   Created: 2023/06/03 12:40:04 by jonascim          #+#    #+#             */
+/*   Updated: 2023/06/03 17:03:15 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_H
-# define HUMANB_H
+#include "Bureaucrat.hpp"
 
-#include "Weapon.hpp"
-
-class	HumanB
+int main()
 {
-	public:
+	Bureaucrat *B = new Bureaucrat("John");
 
-		HumanB(std::string name);
-		~HumanB(void);
-
-		void	setWeapon(Weapon &weapon);
-		void	attack(void);
-
-	private:
-
-		std::string	_name;
-		Weapon		*_type;
-
-};
-
-#endif
+	B->incrementGrade();
+	std::cout <<
+}

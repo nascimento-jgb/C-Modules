@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 09:06:01 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/24 12:17:43 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/01 11:42:34 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 	Fixed	a;
 	Fixed	const b(Fixed(5.05f) * Fixed(2));
 
-	// a = Fixed(1234.4321f);
+	a = Fixed(1234.4321f);
 
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;

@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:52:57 by jonascim          #+#    #+#             */
-/*   Updated: 2023/03/24 12:15:45 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/05/01 11:34:34 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,31 +113,31 @@ Fixed	Fixed::operator/(const Fixed &rhs) const
 }
 
 //Increment and Decrement
-Fixed	&Fixed::operator++(void)
+Fixed	Fixed::operator++(void)
 {
-	++this->_fixedPointValue;
+	this->_fixedPointValue++;
 	return *this;
 }
 
-Fixed	&Fixed::operator--(void)
+Fixed	Fixed::operator--(void)
 {
-	--this->_fixedPointValue;
+	this->_fixedPointValue--;
 	return *this;
 }
 
 Fixed	Fixed::operator++(int)
 {
 	Fixed temp(*this);
-
-	temp._fixedPointValue = this->_fixedPointValue++;
+	operator++();
+	// temp._fixedPointValue = this->_fixedPointValue++;
 	return temp;
 }
 
 Fixed	Fixed::operator--(int)
 {
 	Fixed temp(*this);
-
-	temp._fixedPointValue = this->_fixedPointValue--;
+	operator--();
+	// temp._fixedPointValue = this->_fixedPointValue--;
 	return temp;
 }
 
