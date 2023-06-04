@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:08 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/03 17:02:01 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/04 15:31:50 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,13 @@ Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name) : _name(name), _grade(150)
 {
-	std::cout << "Bureaucrat constructor with anme parameter being called." << std::endl;
+	std::cout << "Bureaucrat constructor with name parameter being called." << std::endl;
+	return ;
+}
+
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+{
+	std::cout << "Bureaucrat constructor with name and grade parameters being called." << std::endl;
 	return ;
 }
 
@@ -56,9 +62,9 @@ std::ostream &operator<<(std::ostream &os, Bureaucrat *target)
 void	Bureaucrat::setGrade(int grade)
 {
 	if (grade > 150)
-		throw Bureaucrat::GradeTooLowExeption();
+		throw Bureaucrat::GradeTooLowException();
 	if (grade < 1)
-		throw Bureaucrat::GradeTooHighExeption();
+		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade = grade;
 	return ;
