@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:04 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/07 08:54:46 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:11:20 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,76 @@
 
 int main()
 {
-	//Test for first exception
+	//General test
 
-	Bureaucrat *B = new Bureaucrat("John");
+	Bureaucrat *B = new Bureaucrat("John", 15);
+	Form	*F = new Form("Test", 20, 100);
 
-	B->incrementGrade();
-	std::cout << B->getGrade() << std::endl;
 	try
 	{
-		B->decrementGrade();
-		std::cout << B->getGrade() << std::endl;
-		B->decrementGrade();
+		F->beSigned(*B);
+		B->signForm(*F);
+		std::cout << B;
+		std::cout << F;
 	}
-	catch(Bureaucrat::GradeTooLowException &e)
+	catch(Form::GradeTooLowException& e)
 	{
-		std::cerr << "Incrementing grade of " << B->getName() <<
-		" failed: " << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
 
-	//Test for second exception
+	//Test for first exception
 
-	// Bureaucrat *B = new Bureaucrat("John2", 1);
+	// Bureaucrat *B = new Bureaucrat("John", 25);
+	// Form	*F = new Form("Test", 20, 100);
 
-	// std::cout << "Bureaucrat named: " << B->getName()<< ", with grade of: " << B->getGrade() << std::endl;
 	// try
 	// {
-	// 	B->incrementGrade();
+	// 	F->beSigned(*B);
+	// 	B->signForm(*F);
+	// 	std::cout << B;
+	// 	std::cout << F;
 	// }
-	// catch(Bureaucrat::GradeTooHighException &e)
+	// catch(Form::GradeTooLowException& e)
 	// {
-	// 	std::cerr << "Incrementing grade of " << B->getName() <<
-	// 	" failed: " << e.what() << std::endl;
+	// 	std::cerr << e.what() << '\n';
 	// }
+
+	//Constructor and sign grade test
+
+	// Bureaucrat *B = new Bureaucrat("John", 15);
+
+	// try
+	// {
+	// 	Form	*F = new Form("Test", 0, 100);
+	// 	F->beSigned(*B);
+	// 	B->signForm(*F);
+	// 	std::cout << B;
+	// 	std::cout << F;
+	// }
+	// catch(Form::GradeTooHighException& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+
+	//Execution grade test
+	// Bureaucrat *B = new Bureaucrat("John", 15);
+
+	// try
+	// {
+	// 	Form	*F = new Form("Test", 10, -25);
+	// 	F->beSigned(*B);
+	// 	B->signForm(*F);
+	// 	std::cout << B;
+	// 	std::cout << F;
+	// }
+	// catch(Form::GradeTooHighException& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+
+
+	delete B;
+	delete F;
+
+	//   /\ deletes must be adjusted according to each case
 }

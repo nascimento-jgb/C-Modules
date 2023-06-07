@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:08 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/07 08:54:04 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:41:39 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,14 @@ void	Bureaucrat::incrementGrade(void)
 {
 	std::cout << "Attempt to increment grade being called." << std::endl;
 	this->setGrade(this->_grade - 1);
+}
+
+void	Bureaucrat::signForm(Form &ref)
+{
+	if (ref.getSignature() == true)
+		std::cout << this->getName() <<" signed the form " << ref.getName() << "." << std::endl;
+	else
+		std::cout << this->getName() <<" coudn't sign the form " << ref.getName() << " due to low grade (a.k.a incompetent)." << std::endl;
 }
 
 //Exeptions

@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:04 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/07 08:54:46 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:43:45 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,6 @@ int main()
 	// 	std::cerr << "Incrementing grade of " << B->getName() <<
 	// 	" failed: " << e.what() << std::endl;
 	// }
+
+	delete B;
 }
