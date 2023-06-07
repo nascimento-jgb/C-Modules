@@ -6,12 +6,11 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:04 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/04 15:34:57 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/07 08:54:46 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include <iostream>
+#include "../includes/Bureaucrat.hpp"
 
 int main()
 {
@@ -47,6 +46,4 @@ int main()
 	// 	std::cerr << "Incrementing grade of " << B->getName() <<
 	// 	" failed: " << e.what() << std::endl;
 	// }
-
-
 }

@@ -6,13 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:14 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/04 15:35:08 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/07 08:54:05 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
 
+#include <iostream>
 #include <string>
 
 class Bureaucrat
@@ -50,5 +49,4 @@ class Bureaucrat
 	};
 };
 	//Operator overload
-		std::ostream		&operator<<(std::ostream &os, Bureaucrat *target);
-#endif
+		std::ostream	&operator<<(std::ostream &os, Bureaucrat *target);

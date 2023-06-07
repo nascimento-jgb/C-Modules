@@ -1,4 +1,4 @@
-NAME = rpg
+NAME = office
 
 GCC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
