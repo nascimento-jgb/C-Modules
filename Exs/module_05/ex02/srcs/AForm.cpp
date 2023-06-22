@@ -83,7 +83,6 @@ int	AForm::getExecGrade(void) const
 //Methods
 void	AForm::beSigned(Bureaucrat const &ref)
 {
-	//Continue from here
 	if ((int)ref.getGrade() > this->getSignGrade())
 		throw(Bureaucrat::GradeTooLowException());
 	else if (this->getSignature() == false)

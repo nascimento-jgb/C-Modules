@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 08:57:07 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/07 10:58:43 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/22 07:53:19 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ int	Form::getExecGrade(void) const
 //Methods
 void	Form::beSigned(Bureaucrat &ref)
 {
-	//Continue from here
 	if ((int)ref.getGrade() > this->getSignGrade())
 		throw(Form::GradeTooLowException());
 	else if (this->getIsSigned() == "NOPE, it's not signed!")
@@ -92,7 +91,7 @@ void	Form::beSigned(Bureaucrat &ref)
 			this->_signature = true;
 		}
 	else
-		std::cout << "Forma= lready signed!" << std::endl;
+		std::cout << "Form = already signed!" << std::endl;
 }
 
 //Exeptions

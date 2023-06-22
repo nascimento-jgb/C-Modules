@@ -7,7 +7,6 @@
 class Span
 {
 	private:
-		unsigned int		_elements;
 		std::vector<int>	vec;
 
 	public:

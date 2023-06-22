@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-Span::Span(unsigned int N) : _elements(N), vec(N) { return ;}
+Span::Span(unsigned int N) : vec(N) { return ;}
 
 Span::~Span(void)
 {
@@ -12,7 +12,14 @@ Span::~Span(void)
 
 void	Span::addNumber(int number)
 {
-	vec.push_back(number);
+	for (unsigned long i = 0; i < vec.size(); i++)
+	{
+		if (vec[i] == 0)
+		{
+			vec[i] = number;
+			break;
+		}
+	}
 	return ;
 }
 
@@ -20,16 +27,17 @@ void	Span::addMultipleNumbers(void)
 {
 	std::srand(static_cast<unsigned int>(std::time(0)));
 
-	unsigned int random_number = static_cast<unsigned int>(std::rand());
-
-	for (int i = 0; i < static_cast<int>(_elements); i++)
-		vec.push_back(random_number);
+	for (unsigned long i = 0; i < vec.size(); i++)
+	{
+		unsigned int random_number = static_cast<unsigned int>(std::rand());
+		vec[i] = random_number;
+	}
 	return ;
 }
 
 void	Span::printVector(void) const
 {
-	for (int i = 0; i < static_cast<int>(_elements); i++)
+	for (unsigned long i = 0; i < vec.size(); i++)
 		std::cout << "Value at index [" << i << "] : " << vec.at(i) << std::endl;
 	return ;
 }
@@ -40,23 +48,17 @@ int	Span::shortestSpan(void)
 		throw std::exception();
 	else
 	{
-		std::vector<int>::iterator	it_smallest = vec.begin();
-		std::vector<int>::iterator	it_secondSmallest = vec.begin() + 1;
-
-		if (*it_secondSmallest < *it_smallest)
-			std::swap(it_smallest, it_secondSmallest);
+		std::vector<int>::iterator	it_first = vec.begin();
+		std::vector<int>::iterator	it_second = vec.begin() + 1;
+		int difference = abs(*it_first - *it_second);
 
 		for (std::vector<int>::iterator	it = vec.begin() + 2; it != vec.end(); it++)
 		{
-			if (*it < *it_smallest)
-			{
-				it_secondSmallest = it_smallest;
-				it_smallest = it;
-			}
-			else if (*it < *it_secondSmallest)
-				it_secondSmallest = it;
+			if (abs(*it - *it_second) < difference)
+				difference = abs(*it - *it_second);
+			++it_second;
 		}
-		return (it_secondSmallest - it_smallest);
+		return (difference);
 	}
 }
 
@@ -66,7 +68,7 @@ int	Span::longestSpan(void)
 		throw std::exception();
 	else
 	{
-		std::vector<int>::iterator	it_max = vec.end();
+		std::vector<int>::iterator	it_max = vec.end() - 1;
 		std::vector<int>::iterator	it_min = vec.end();
 		for (std::vector<int>::iterator	it = vec.begin(); it != vec.end(); it++)
 		{
@@ -75,6 +77,6 @@ int	Span::longestSpan(void)
 			if (*it < *it_min)
 				it_min = it;
 		}
-		return (it_max - it_min);
+		return (*it_max - *it_min);
 	}
 }
