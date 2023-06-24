@@ -1,5 +1,4 @@
 #include "../includes/MutantStack.hpp"
-#include <iostream>
 
 int main()
 {
@@ -20,22 +19,15 @@ int main()
 	std::cout << mstack.top() << std::endl;
 	std::cout << mstack.size() << std::endl;
 
-	// MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
-	// std::cout << *it << " - " << *ite << std::endl;
-	// ++it;
-	// std::cout << *it << " - " << *ite << std::endl;
-	// ++it;
-	// std::cout << *it << " - " << *ite << std::endl;
-	// ++it;
-	// std::cout << *it << " - " << *ite << std::endl;
-	// ++it;
-	// std::cout << *it << " - " << *ite << std::endl;
-	while (ite != mstack.begin())
+	++it;
+	--it;
+	while (it != ite)
 	{
-		std::cout << *ite << std::endl;
-		--ite;
+		std::cout << *it << std::endl;
+		++it;
 	}
-	// std::stack<int> s(mstack);
+	std::stack<int> s(mstack);
 	return 0;
 }

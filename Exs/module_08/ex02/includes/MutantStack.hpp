@@ -2,30 +2,17 @@
 # define MUTANTSTACK_H
 
 #include <stack>
+#include <deque>
 #include <iterator>
+#include <iostream>
 
-template <typename T>
-class MutantStack
+template <typename T, typename Container = std::deque<T> >
+class MutantStack : public std::stack<T, Container>
 {
-	private:
-		std::stack<T> stack;
-
-		//helper function
-		typename std::stack<T>::container_type stackToContainer() const;
-
 	public:
-
-		// Member functions delegation to std::stack
-		void	push(const T &value);
-		void	pop(void);
-		T		&top(void);
-		const T	&top(void) const;
-		bool	empty(void) const;
-		size_t	size(void) const;
-
 		// Iterator typedefs
-		typedef typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		typedef typename Container::iterator iterator;
+		typedef typename Container::const_iterator const_iterator;
 
 		// Custom iterators
 		iterator		begin(void);
