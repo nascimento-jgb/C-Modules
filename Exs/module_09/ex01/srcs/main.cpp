@@ -7,9 +7,9 @@ int main(int argc, char **argv)
 	{
 		RPN *root = buildExpressionTree(argv[1]);
 		inorderTraversal(root);
-		//double result = evaluateExpression(root);
+		double result = evaluateExpression(root);
 
-		// std::cout << "Result: " << result << std::endl;
+		std::cout << " => Result: " << result << std::endl;
 	}
 	return 0;
 };

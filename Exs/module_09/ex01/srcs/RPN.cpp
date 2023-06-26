@@ -4,16 +4,23 @@ RPN	*buildExpressionTree(const std::string &expression)
 {
 	std::queue<std::string> tokens;
 	std::stack<RPN *> stack;
+	size_t pos = 0;
 
-	for (size_t pos = 0; pos < expression.size(); pos++)
+	//still need to inclide the exception related to the expression not having a single operand or too many in a row
+	if (expression.size() == 0)
+		return NULL;
+	else
 	{
-		size_t spacePos = expression.find(' ', pos);
-		if (spacePos == std::string::npos)
-			spacePos = expression.size();
+		while (pos < expression.size())
+		{
+			size_t spacePos = expression.find(' ', pos);
+			if (spacePos == std::string::npos)
+				spacePos = expression.size();
 
-		std::string token = expression.substr(pos, spacePos - pos);
-		tokens.push(token);
-		pos = spacePos + 1;
+			std::string token = expression.substr(pos, spacePos - pos);
+			tokens.push(token);
+			pos = spacePos + 1;
+		}
 	}
 
 	while (!tokens.empty())
@@ -48,7 +55,14 @@ double	evaluateExpression(RPN *root)
 		else if (root->value == "-")
 			return (evaluateExpression(root->left) - evaluateExpression(root->right));
 		else
-			return std::stod(root->value);
+			{
+				try{
+					return std::stod(root->value);
+				}
+				catch (std::exception &e){
+					std::cout << "Invalid input!" << std::endl;
+				}
+			}
 	}
 	return (0.0);
 }
