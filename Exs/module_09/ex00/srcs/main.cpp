@@ -10,7 +10,6 @@ int main(int argc, char **argv)
 	{
 		btc.Exchange(argv[1]);
 		btc.printMap();
-		// btc.printDataMap();
 	}
 	return 0;
 };
