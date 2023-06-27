@@ -1,5 +1,5 @@
-#ifndef RPN_H
-# define RPN_H
+#ifndef PMERGEME_H
+# define PMERGEME_H
 
 #include <iostream>
 #include <sstream>
