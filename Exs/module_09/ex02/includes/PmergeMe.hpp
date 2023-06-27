@@ -3,20 +3,24 @@
 
 #include <iostream>
 #include <sstream>
-#include <string>
-#include <stack>
-#include <queue>
+#include <vector>
+#include <deque>
+#include <ctime>
 
-struct RPN
-{
-	std::string	value;
-	RPN			*right;
-	RPN			*left;
-};
+//Vector Algorithm Solution
+void	vectorInsertionSort(std::vector<int> &arr, int low, int high);
+void	vectorMerge(std::vector<int> &arr, int low, int mid, int high);
+void	vectorMergeInsertionSort(std::vector<int> &arr, int low, int high);
 
-RPN		*buildExpressionTree(const std::string &expression);
-bool	isValidRPN(const std::string &expression);
-double	evaluateExpression(RPN *root);
-void	inorderTraversal(RPN *root);
+//Deque Algorithm Solution
+void	dequeInsertionSort(std::deque<int> &arr, int low, int high);
+void	dequeMerge(std::deque<int> &arr, int low, int mid, int high);
+void	dequeMergeInsertionSort(std::deque<int> &arr, int low, int high);
 
+//Auxiliar Functions
+std::vector<int>	ConvertStringToIntVector(const std::string &expression);
+std::deque<int>		ConvertStringToIntDeque(const std::string &expression);
+void				PrintVectorArray(std::vector<int> &arr);
+void				PrintDequeArray(std::deque<int> &arr);
+int					elementCount(const std::string &expression);
 #endif

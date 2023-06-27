@@ -1,100 +1,212 @@
-#include "../includes/RPN.hpp"
+#include "../includes/PmergeMe.hpp"
 
-bool isValidRPN(const std::string &expression)
+//Vector Algorithm Solution
+void	vectorInsertionSort(std::vector<int> &arr, int low, int high)
 {
-	std::stack<int> stack;
-	std::istringstream iss(expression);
-	std::string token;
-
-	while (iss >> token)
-	{
-		if (isdigit(token[0]))
+	 for (int i = low + 1; i <= high; ++i)
+	 {
+		int key = arr[i];
+		int j = i - 1;
+		while (j >= low && arr[j] > key)
 		{
-			int number = token[0] - '0';
-			if (number < 0 || number > 9)
-				return false;
-			stack.push(number);
+			arr[j + 1] = arr[j];
+			--j;
 		}
-		else if (token.size() == 1 && (token[0] == '+' || token[0] == '-' || token[0] == '*' || token[0] == '/'))
-		{
-			if (stack.size() < 2)
-				return false;
-			stack.pop();
-			stack.pop();
-			stack.push(0);
-		}
-		 else
-			return false;
+		arr[j + 1] = key;
 	}
-	return stack.size() == 1;
 }
 
-RPN	*buildExpressionTree(const std::string &expression)
+void	vectorMerge(std::vector<int> &arr, int low, int mid, int high)
 {
-	std::queue<std::string> tokens;
-	std::stack<RPN *> stack;
-	size_t pos = 0;
+	int leftSize = mid - low + 1;
+	int rightSize = high - mid;
 
-	while (pos < expression.size())
+	std::vector<int> left(leftSize);
+	std::vector<int> right(rightSize);
+
+	for (int i = 0; i < leftSize; ++i)
+		left[i] = arr[low + i];
+
+	for (int j = 0; j < rightSize; ++j)
+		right[j] = arr[mid + 1 + j];
+
+	int i = 0, j = 0, k = low;
+
+	while (i < leftSize && j < rightSize)
 	{
-		size_t spacePos = expression.find(' ', pos);
-		if (spacePos == std::string::npos)
-			spacePos = expression.size();
-		std::string token = expression.substr(pos, spacePos - pos);
-		tokens.push(token);
-		pos = spacePos + 1;
-	}
-
-	while (!tokens.empty())
-	{
-		std::string token = tokens.front();
-		tokens.pop();
-
-		RPN *newNode = new RPN;
-		newNode->value = token;
-		if (token == "+" || token == "-" || token == "*" || token == "/")
+		if (left[i] <= right[j])
 		{
-			newNode->right = stack.top();
-			stack.pop();
-			newNode->left = stack.top();
-			stack.pop();
+			arr[k] = left[i];
+			++i;
 		}
-		stack.push(newNode);
-	}
-	return (stack.top());
-}
-
-double	evaluateExpression(RPN *root)
-{
-	if (root)
-	{
-		if (root->value == "*")
-			return (evaluateExpression(root->left) * evaluateExpression(root->right));
-		else if (root->value == "/")
-			return (evaluateExpression(root->left) / evaluateExpression(root->right));
-		else if (root->value == "+")
-			return (evaluateExpression(root->left) + evaluateExpression(root->right));
-		else if (root->value == "-")
-			return (evaluateExpression(root->left) - evaluateExpression(root->right));
 		else
-			{
-				try{
-					return std::stod(root->value);
-				}
-				catch (std::exception &e){
-					std::cerr<< "Invalid input!" << std::endl;
-				}
-			}
+		{
+			arr[k] = right[j];
+			++j;
+		}
+		++k;
 	}
-	return (0.0);
+	while (i < leftSize)
+	{
+		arr[k] = left[i];
+		++i;
+		++k;
+	}
+	while (j < rightSize)
+	{
+		arr[k] = right[j];
+		++j;
+		++k;
+	}
 }
 
-void	inorderTraversal(RPN *root)
+void	vectorMergeInsertionSort(std::vector<int> &arr, int low, int high)
 {
-	if (root)
-	{
-		inorderTraversal(root->left);
-		std::cout << root->value << " ";
-		inorderTraversal(root->right);
+	   if (low < high) {
+		// Check if the subarray is small enough to use insertion sort
+		if (high - low + 1 <= 5) {
+			vectorInsertionSort(arr, low, high);
+		}
+		else {
+			int mid = low + (high - low) / 2;
+
+			// Recursively sort the subarrays
+			vectorMergeInsertionSort(arr, low, mid);
+			vectorMergeInsertionSort(arr, mid + 1, high);
+
+			// Merge the sorted subarrays
+			vectorMerge(arr, low, mid, high);
+		}
 	}
+}
+
+//Deque Algorithm Solution
+void	dequeInsertionSort(std::deque<int> &arr, int low, int high)
+{
+	 for (int i = low + 1; i <= high; ++i)
+	 {
+		int key = arr[i];
+		int j = i - 1;
+		while (j >= low && arr[j] > key)
+		{
+			arr[j + 1] = arr[j];
+			--j;
+		}
+		arr[j + 1] = key;
+	}
+}
+
+void	dequeMerge(std::deque<int> &arr, int low, int mid, int high)
+{
+	int leftSize = mid - low + 1;
+	int rightSize = high - mid;
+
+	std::deque<int> left(leftSize);
+	std::deque<int> right(rightSize);
+
+	for (int i = 0; i < leftSize; ++i)
+		left[i] = arr[low + i];
+
+	for (int j = 0; j < rightSize; ++j)
+		right[j] = arr[mid + 1 + j];
+
+	int i = 0, j = 0, k = low;
+
+	while (i < leftSize && j < rightSize)
+	{
+		if (left[i] <= right[j])
+		{
+			arr[k] = left[i];
+			++i;
+		}
+		else
+		{
+			arr[k] = right[j];
+			++j;
+		}
+		++k;
+	}
+	while (i < leftSize)
+	{
+		arr[k] = left[i];
+		++i;
+		++k;
+	}
+	while (j < rightSize)
+	{
+		arr[k] = right[j];
+		++j;
+		++k;
+	}
+}
+
+void	dequeMergeInsertionSort(std::deque<int> &arr, int low, int high)
+{
+	   if (low < high) {
+		// Check if the subarray is small enough to use insertion sort
+		if (high - low + 1 <= 5) {
+			dequeInsertionSort(arr, low, high);
+		}
+		else {
+			int mid = low + (high - low) / 2;
+
+			// Recursively sort the subarrays
+			dequeMergeInsertionSort(arr, low, mid);
+			dequeMergeInsertionSort(arr, mid + 1, high);
+
+			// Merge the sorted subarrays
+			dequeMerge(arr, low, mid, high);
+		}
+	}
+}
+
+// Auxiliar functions
+std::vector<int>	ConvertStringToIntVector(const std::string &expression)
+{
+	std::vector<int> res;
+	std::istringstream iss(expression);
+	int num;
+
+	while (iss >> num)
+		res.push_back(num);
+	return res;
+}
+
+std::deque<int>	ConvertStringToIntDeque(const std::string &expression)
+{
+	std::deque<int> res;
+	std::istringstream iss(expression);
+	int num;
+
+	while (iss >> num)
+		res.push_back(num);
+	return res;
+}
+
+void	PrintVectorArray(std::vector<int> &arr)
+{
+	for (unsigned long i = 0; i < arr.size(); ++i)
+		std::cout << arr[i] << " ";
+	std::cout << std::endl;
+}
+
+void	PrintDequeArray(std::deque<int> &arr)
+{
+	for (unsigned long i = 0; i < arr.size(); ++i)
+			std::cout << arr[i] << " ";
+	std::cout << std::endl;
+}
+
+int		elementCount(const std::string &expression)
+{
+	int count = 0;
+
+	for (unsigned long i = 0; i < expression.size(); ++i)
+	{
+		if (!isdigit(expression[i]) && isdigit(expression[i - 1]))
+			count++;
+		if ( i == expression.size() - 1 && isdigit(expression[i]))
+			count++;
+	}
+	return count;
 }
