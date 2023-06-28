@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:08 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/08 09:40:33 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:27:04 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,30 @@ void	Bureaucrat::incrementGrade(void)
 
 void	Bureaucrat::signForm(AForm &ref)
 {
-	ref.beSigned(*this);
+	try
+	{
+		ref.beSigned(*this);
+		std::cout << _name << " signed " << ref.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << _name << " couldn't sign " << ref.getName()
+			<< " due to their insufficient ranking." << std::endl;
+	}
 }
 
 void	Bureaucrat::executeForm(AForm const &ref) const
 {
-	ref.execute(*this);
+	try
+	{
+		ref.execute(*this);
+		std::cout << _name << " executed " << ref.getName() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException &e)
+	{
+		std::cout << _name << " couldn't execute " << ref.getName()
+			<< " due to their insufficient ranking." << std::endl;
+	}
 }
 
 //Exeptions
