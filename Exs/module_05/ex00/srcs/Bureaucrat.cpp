@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:08 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/07 10:26:47 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:38:21 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,6 @@ void	Bureaucrat::incrementGrade(void)
 {
 	std::cout << "Attempt to increment grade being called." << std::endl;
 	this->setGrade(this->_grade - 1);
-}
-
-void	Bureaucrat::signForm(const Form &ref)
-{
-
 }
 
 //Exeptions

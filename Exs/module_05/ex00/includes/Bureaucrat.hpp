@@ -6,10 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:14 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/07 10:22:16 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:39:45 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BUREAUCRAT_H
+# define BUREAUCRAT_H
 
 #include <iostream>
 #include <string>
@@ -36,7 +38,6 @@ class Bureaucrat
 		void				decrementGrade(void);
 		void				incrementGrade(void);
 
-
 	class GradeTooLowException : public std::exception
 	{
 		public:
@@ -50,3 +51,5 @@ class Bureaucrat
 };
 	//Operator overload
 		std::ostream	&operator<<(std::ostream &os, Bureaucrat *target);
+
+#endif
