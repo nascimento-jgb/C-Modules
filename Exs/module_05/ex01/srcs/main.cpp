@@ -6,7 +6,7 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:40:04 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/07 12:48:26 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:09:10 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int main()
 
 	// try
 	// {
-	// 	F->beSigned(*B);
 	// 	B->signForm(*F);
+	// 	// F->beSigned(*B);
 	// 	std::cout << B;
 	// 	std::cout << F;
 	// }
@@ -81,8 +81,8 @@ int main()
 	// 	std::cerr << e.what() << '\n';
 	// }
 
-	delete B;
-	delete F;
+	// delete B;
+	// delete F;
 
 	//   /\ deletes must be adjusted according to each case
 }
