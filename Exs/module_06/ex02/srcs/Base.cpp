@@ -49,19 +49,24 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-	if (A *derivedA = dynamic_cast<A*>(&p))
+	try {
+		if (A *derivedA = dynamic_cast<A*>(&p))
+		{
+			std::cout << "A" << std::endl;
+			return;
+		}
+		else if (B *derivedB = dynamic_cast<B*>(&p))
+		{
+			std::cout << "B" << std::endl;
+			return;
+		}
+		else if (C *derivedC = dynamic_cast<C*>(&p))
+		{
+			std::cout << "C" << std::endl;
+			return;
+		}
+	} catch (std::bad_cast &)
 	{
-		std::cout << "A" << std::endl;
-		return;
-	}
-	else if (B *derivedB = dynamic_cast<B*>(&p))
-	{
-		std::cout << "B" << std::endl;
-		return;
-	}
-	else if (C *derivedC = dynamic_cast<C*>(&p))
-	{
-		std::cout << "C" << std::endl;
-		return;
+		std::cout << "Dynamic casting failed" << std::endl;
 	}
 }
