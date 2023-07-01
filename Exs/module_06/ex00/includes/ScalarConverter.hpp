@@ -6,11 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:36:30 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/19 07:32:23 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/07/01 13:56:30 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef SCALARCONVERTER_H
+# define SCALARCONVERTER_H
 
 #include <string>
 #include <iostream>
@@ -29,3 +30,5 @@ class ScalarConverter
 		static void convert(std::string &literal);
 
 };
+
+#endif

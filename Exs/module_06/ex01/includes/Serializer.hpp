@@ -6,11 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 08:12:09 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/19 10:23:38 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/07/01 13:58:41 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef SERIALIZER_H
+# define SERIALIZER_H
 
 #include <cstdint>
 
@@ -31,3 +32,5 @@ class Serializer
 		static uintptr_t	serialize(Data *ptr);
 		static Data			*deserialize(uintptr_t raw);
 };
+
+#endif

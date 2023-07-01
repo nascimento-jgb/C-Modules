@@ -6,11 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 10:38:45 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/19 10:54:58 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/07/01 14:01:44 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BASE_H
+# define BASE_H
 
 class Base
 {
@@ -25,3 +26,5 @@ class C : public Base {};
 Base	*generate(void);
 void	identify(Base *p);
 void	identify(Base &p);
+
+#endif

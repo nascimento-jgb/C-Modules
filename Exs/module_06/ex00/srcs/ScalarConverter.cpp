@@ -65,7 +65,7 @@ void ScalarConverter::convert(std::string &literal)
 		i = static_cast<int>(d);
 		f =	static_cast<double>(d);
 	}
-	else if (literal.length() == 1)
+	else if (literal.length() == 1 && literal[0] != '0')
 	{
 		c = literal.at(0);
 		i = static_cast<int>(c);
