@@ -13,14 +13,14 @@
 #include "../includes/Array.hpp"
 #include <iostream>
 
-#define MAX_VAL 750
+#define MAX 500
 
 int main()
 {
-	Array<int> numbers(MAX_VAL);
-	int* mirror = new int[MAX_VAL];
+	Array<int> numbers(MAX);
+	int* mirror = new int[MAX];
 	srand(time(NULL));
-	for (int i = 0; i < MAX_VAL; i++)
+	for (int i = 0; i < MAX; i++)
 	{
 		const int value = rand();
 		numbers[i] = value;
@@ -34,7 +34,7 @@ int main()
 	}
 
 	// Basic functionality test
-	for (int i = 0; i < MAX_VAL; i++)
+	for (int i = 0; i < MAX; i++)
 	{
 		if (mirror[i] != numbers[i])
 		{
@@ -48,21 +48,21 @@ int main()
 	{
 		numbers[-2] = 0;
 	}
-	catch(const std::exception& e)
+	catch(const std::exception &e)
 	{
 		std::cerr << "Failed to access numbers[-2]: " << e.what() << '\n';
 	}
 	try
 	{
-		numbers[MAX_VAL] = 0;
+		numbers[MAX] = 0;
 	}
-	catch(const std::exception& e)
+	catch(const std::exception &e)
 	{
-		std::cerr << "Failed to access numbers[MAX_VAL]: " << e.what() << '\n';
+		std::cerr << "Failed to access numbers[MAX]: " << e.what() << '\n';
 	}
 
 	// Indexing test
-	for (int i = 0; i < MAX_VAL; i++)
+	for (int i = 0; i < MAX; i++)
 		numbers[i] = rand();
 
 	// Empty array test
@@ -71,7 +71,7 @@ int main()
 	{
 		empty[0] = 42;
 	}
-	catch(const std::exception& e)
+	catch(const std::exception &e)
 	{
 		std::cerr << "Failed to access empty[0]: " << e.what() << '\n';
 	}

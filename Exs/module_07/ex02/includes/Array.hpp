@@ -6,11 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 11:07:06 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/19 13:12:08 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/07/02 09:19:53 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ARRAY_H
+# define ARRAY_H
 
 #include <typeinfo>
 #include <iostream>
@@ -34,3 +35,5 @@ class Array
 };
 
 #include "../srcs/Array.tpp"
+
+#endif
