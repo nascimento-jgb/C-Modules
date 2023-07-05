@@ -137,21 +137,5 @@ void deleteExpressionTree(RPN *root)
 	root->left = NULL;
 	root->right = NULL;
 	delete root;
-
-	// std::stack<RPN*> nodeStack;
-	// nodeStack.push(root);
-
-	// while (!nodeStack.empty())
-	// {
-	// 	RPN* currentNode = nodeStack.top();
-	// 	nodeStack.pop();
-
-	// 	if (currentNode->left != NULL)
-	// 		nodeStack.push(currentNode->left);
-	// 	if (currentNode->right != NULL)
-	// 		nodeStack.push(currentNode->right);
-
-	// 	delete currentNode;
-	// }
 }
 
