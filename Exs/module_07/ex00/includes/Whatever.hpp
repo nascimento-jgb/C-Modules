@@ -6,11 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 11:07:06 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/19 11:16:08 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/07/02 09:12:56 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef WHATEVER_H
+# define WHATEVER_H
 
 #include <typeinfo>
 
@@ -34,4 +35,4 @@ T	max(T &a, T &b)
 	return (a > b ? a : b);
 }
 
-
+#endif

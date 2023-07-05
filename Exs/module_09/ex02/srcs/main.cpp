@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-	if (argc == 2)
+	if (argc == 2 && !std::string(argv[1]).empty())
 	{
 		std::vector<int>	vec_res = ConvertStringToIntVector(argv[1]);
 		std::deque<int>		deque_res = ConvertStringToIntDeque(argv[1]);

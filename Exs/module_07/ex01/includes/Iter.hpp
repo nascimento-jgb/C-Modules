@@ -6,11 +6,12 @@
 /*   By: jonascim <jonascim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 11:07:06 by jonascim          #+#    #+#             */
-/*   Updated: 2023/06/19 11:28:15 by jonascim         ###   ########.fr       */
+/*   Updated: 2023/07/02 09:19:33 by jonascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ITER_H
+# define ITER_H
 
 #include <typeinfo>
 #include <iostream>
@@ -27,3 +28,5 @@ void	printElement(T element)
 {
 	std::cout << element << " ";
 }
+
+#endif

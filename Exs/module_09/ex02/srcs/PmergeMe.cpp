@@ -163,9 +163,9 @@ void	dequeMergeInsertionSort(std::deque<int> &arr, int low, int high)
 // Auxiliar functions
 std::vector<int>	ConvertStringToIntVector(const std::string &expression)
 {
-	std::vector<int> res;
-	std::istringstream iss(expression);
-	int num;
+	std::vector<int>	res;
+	std::istringstream	iss(expression);
+	int					num;
 
 	while (iss >> num)
 		res.push_back(num);
@@ -174,9 +174,9 @@ std::vector<int>	ConvertStringToIntVector(const std::string &expression)
 
 std::deque<int>	ConvertStringToIntDeque(const std::string &expression)
 {
-	std::deque<int> res;
-	std::istringstream iss(expression);
-	int num;
+	std::deque<int>		res;
+	std::istringstream	iss(expression);
+	int					num;
 
 	while (iss >> num)
 		res.push_back(num);
@@ -199,7 +199,7 @@ void	PrintDequeArray(std::deque<int> &arr)
 
 int		elementCount(const std::string &expression)
 {
-	int count = 0;
+	int	count = 0;
 
 	for (unsigned long i = 0; i < expression.size(); ++i)
 	{

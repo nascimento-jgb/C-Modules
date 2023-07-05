@@ -13,8 +13,8 @@ class BitcoinExchange
 {
 	private:
 		std::multimap<std::string, float>	inputMap;
-		std::map<std::string, float>		dataMap;
-		std::string							line;
+		std::map<std::string, float>	dataMap;
+		std::string						line;
 
 	public:
 		//Input Methods

@@ -17,6 +17,6 @@ struct RPN
 RPN		*buildExpressionTree(const std::string &expression);
 bool	isValidRPN(const std::string &expression);
 double	evaluateExpression(RPN *root);
-void	inorderTraversal(RPN *root);
+void 	deleteExpressionTree(RPN *root);
 
 #endif
