@@ -4,11 +4,26 @@ int main(int argc, char **argv)
 {
 	if (argc == 2 && !std::string(argv[1]).empty())
 	{
-		std::vector<int>	vec_res = ConvertStringToIntVector(argv[1]);
-		std::deque<int>		deque_res = ConvertStringToIntDeque(argv[1]);
-		int count = elementCount(argv[1]);
+		std::string			arg = argv[1];
+		std::vector<int>	vec_res;
+		std::deque<int>		deque_res;
+		int					numbers;
 
-		std::cout << "Before: " << argv[1] << std::endl;
+		if (arg.substr(0, 3) == "jot")
+		{
+			std::string commandNumbers = executeCommand(arg);
+			numbers = elementCount(commandNumbers);
+			std::cout << "Before: " << numbers << std::endl;
+			vec_res = ConvertStringToIntVector(commandNumbers);
+			deque_res = ConvertStringToIntDeque(commandNumbers);
+		}
+		else
+		{
+			numbers = elementCount(arg);
+			std::cout << "Before: " << numbers << std::endl;
+			vec_res = ConvertStringToIntVector(arg);
+			deque_res = ConvertStringToIntDeque(arg);
+		}
 
 		clock_t vstart = clock();
 		vectorMergeInsertionSort(vec_res, 0, (int)vec_res.size() - 1);
@@ -23,8 +38,8 @@ int main(int argc, char **argv)
 		std::cout << "After: ";
 		PrintVectorArray(vec_res);
 
-		std::cout << "Time to process a range of " << count << " elements with std::vector : " << vectorElapsedTime << " milliseconds" << std::endl;
-		std::cout << "Time to process a range of " << count << " elements with std::deque : " << dequeElapsedTime << " milliseconds" << std::endl;
+		std::cout << "Time to process a range of " << numbers << " elements with std::vector : " << vectorElapsedTime << " milliseconds" << std::endl;
+		std::cout << "Time to process a range of " << numbers << " elements with std::deque : " << dequeElapsedTime << " milliseconds" << std::endl;
 	}
 	else
 		std::cerr << "Input failed, try again!" << std::endl;

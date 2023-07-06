@@ -23,4 +23,5 @@ std::deque<int>		ConvertStringToIntDeque(const std::string &expression);
 void				PrintVectorArray(std::vector<int> &arr);
 void				PrintDequeArray(std::deque<int> &arr);
 int					elementCount(const std::string &expression);
+std::string			executeCommand(const std::string &command);
 #endif

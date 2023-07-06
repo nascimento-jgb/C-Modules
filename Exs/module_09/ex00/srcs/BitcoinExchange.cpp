@@ -10,7 +10,10 @@ bool	BitcoinExchange::isValidDate(const std::string &dateString)
 	if (std::sscanf(dateString.c_str(), "%d-%d-%d ", &year, &month, &day) != 3)
 		return false;
 
-	if (year <= 0 || month <= 0 || month > 12 || day <= 0 || day > 31)
+	if (year <= 0 || year < 2009 || year > 2022 || month <= 0 || month > 12 || day <= 0 || day > 31)
+		return false;
+
+	if (year == 2009 && month == 01 && day == 1)
 		return false;
 
 	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
@@ -121,7 +124,7 @@ void	BitcoinExchange::Exchange(char *argv)
 {
 	try
 	{
-		if (strcmp(argv , "input.txt"))
+		if (strcmp(argv , "input.csv"))
 			throw BitcoinExchange::MyException("Invalid file name!");
 		else
 		{

@@ -210,3 +210,23 @@ int		elementCount(const std::string &expression)
 	}
 	return count;
 }
+
+std::string	executeCommand(const std::string &command)
+{
+	std::string result;
+
+	FILE* pipe = popen(command.c_str(), "r");
+	if (pipe)
+	{
+		char buffer[128];
+		while (!feof(pipe))
+		{
+			if (fgets(buffer, 128, pipe) != NULL)
+			{
+				result += buffer;
+			}
+		}
+		pclose(pipe);
+	}
+	return (result);
+}
