@@ -16,6 +16,9 @@ bool	BitcoinExchange::isValidDate(const std::string &dateString)
 	if (year == 2009 && month == 01 && day == 1)
 		return false;
 
+	if (year >= 2022 && month >= 03 && day > 29)
+		return false;
+
 	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
 		return false;
 
@@ -114,8 +117,12 @@ void	BitcoinExchange::printMap(void)
 	for (std::map<std::string, float>::iterator it = inputMap.begin(); it != inputMap.end(); it++)
 	{
 		std::map<std::string, float>::iterator datait = dataMap.begin();
-		while (datait->first < it->first)
+		while (datait->first < it->first && datait != dataMap.end())
+		{
 			++datait;
+			if (datait == dataMap.end())
+				break;
+		}
 		std::cout << "Date: " << it->first << ", Value: " << it->second << " = " << it->second * (--datait)->second << std::endl;
 	}
 }
